@@ -39,17 +39,29 @@
         @csrf
         <h2 class="text-center">LOGIN</h2>       
         <div class="form-group" style="padding-top:15px">
-            <input type="text" class="form-control" name="email" id="email" placeholder="Your email" value="{{ old('email') }}">
+            <input type="text" class="form-control" name="email" id="email" placeholder="Enter your email" value="{{ old('email') }}">
             @error('email')
             <h6 style="color:red"> {{ $message }}</h6>
           @enderror
         </div>
         
         <div class="form-group" style="padding-top:15px">
-            <input type="password" class="form-control" name="password" id="password" placeholder="Choose a password">
+            <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password">
             @error('password')
             <h6 style="color:red"> {{ $message }}</h6>
           @enderror
+        </div>
+
+        <div class="form-check" style="padding-top:15px; margin-left:60px">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            Remember me
+          </label>
         </div>
 
         <div class="form-group">

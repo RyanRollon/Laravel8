@@ -10,14 +10,28 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+
+Route::get('/dashboard', [DashboardController::class, 'index'])
+->name('dashboard')
+->middleware('auth');
+// ->middleware('auth') in order to not direct to the dashboard if the user is not login
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::get('/register', [RegisterController::class, 'index'])
+->name('register')
+->middleware('guest');
+// ->middleware('guest') in order to not direct to the register form if the user is still login
+
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::get('/login', [LoginController::class, 'index'])
+->name('login')
+->middleware('guest');  
+// ->middleware('guest') in order to not direct to the login form if the user is still login
+
+
 Route::post('/login', [LoginController::class, 'store']);
 
 Route::get('/posts', function () {

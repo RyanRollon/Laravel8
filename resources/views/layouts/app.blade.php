@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Posty</title>
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
 
     
@@ -21,10 +21,10 @@
               <!-- Links -->
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="#" style="padding-left:15px">Home</a>
+                  <a class="nav-link" href="/" style="padding-left:15px">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#" style="padding-left:15px">Dashboard</a>
+                  <a class="nav-link" href=" {{  route('dashboard') }}" style="padding-left:15px">Dashboard</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href=" {{  route('posts.index') }}" style="padding-left:15px">Posts</a>
@@ -35,7 +35,7 @@
                 <!-- Authentication -->
                 @if (auth()->user())                  
                     <li class="nav-item">
-                       <a class="nav-link" href="#" style="padding-right:15px">Ryan Rollon</a>
+                       <a class="nav-link" href="#" style="padding-right:15px">{{ auth()->user()->name }}</a>
                    </li>
                    <li class="nav-item">
                      <form action =" {{  route('logout') }} " method="post">
