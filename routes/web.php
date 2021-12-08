@@ -5,6 +5,9 @@ use  App\Http\Controllers\Auth\LogoutController;                    //Logout
 use  App\Http\Controllers\Auth\LoginController;                   //Login Controller
 use  App\Http\Controllers\Auth\RegisterController;         //Register Controller
 use  App\Http\Controllers\DashboardController;              //Dashboard Controller
+use  App\Http\Controllers\PostController; 
+
+
 
 Route::get('/', function () {
     return view('home');
@@ -31,9 +34,7 @@ Route::get('/login', [LoginController::class, 'index'])
 ->middleware('guest');  
 // ->middleware('guest') in order to not direct to the login form if the user is still login
 
-
 Route::post('/login', [LoginController::class, 'store']);
 
-Route::get('/posts', function () {
-    return view('posts.index');
-})->name('posts.index');
+Route::get('/posts', [PostController::class, 'index'])
+->name('posts.index');

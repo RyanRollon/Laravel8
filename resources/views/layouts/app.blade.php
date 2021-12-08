@@ -60,7 +60,7 @@
         @yield('content')
     
 
-<p>RYAN MINA ROLLON</p>
+
 
     </body>
 </html>
