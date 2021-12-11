@@ -15,7 +15,7 @@
     </head>
     
     <body>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="margin-bottom:15px">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" style="margin-bottom:15px">
 
             <div class="container-fluid">
               <!-- Links -->

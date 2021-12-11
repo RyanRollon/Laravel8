@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;     //Auth
 use Illuminate\Support\Facades\Hash;     //Hash
-use App\Models\User;                     //User
+use App\Models\User;                     //User Model
 
 
 class RegisterController extends Controller

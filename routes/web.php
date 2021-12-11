@@ -38,3 +38,4 @@ Route::post('/login', [LoginController::class, 'store']);
 
 Route::get('/posts', [PostController::class, 'index'])
 ->name('posts.index');
+Route::post('/posts', [PostController::class, 'store']);
