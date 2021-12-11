@@ -10,10 +10,15 @@ class PostController extends Controller
    
     public function index()
     {
+
+        //return view('posts.index');
+
         $posts = Post::get();
         return view('posts.index', [
             'posts' => $posts
         ]);
+
+        
     }
    
     public function store(Request $request)
@@ -22,11 +27,15 @@ class PostController extends Controller
             'body' => 'required'
         ]);
 
+        //dd(auth()->user()->posts);
+        //return view('dashboard');
+
+
        $request->user()->posts()->create([
         'body' => $request->body
        ]);
 
-       return back();
+        return back();
         
     }
 

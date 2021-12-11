@@ -43,6 +43,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    //Eloquent Relationship of Post Table
     public function posts()
     {
         return $this->hasMany(Post::class);
