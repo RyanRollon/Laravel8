@@ -36,9 +36,7 @@
                       <div style="margin-top:10px">
                         <a href="" style="color:white; text-decoration:none"><b>Ryan </b></a><span style="color:grey">date</span>
                         
-                        <p style="color:white">
-                          body
-                        </p>
+                        <p style="color:white"> {{ $post->body }}</p>
                       </div>
                      @endforeach
                  @else
