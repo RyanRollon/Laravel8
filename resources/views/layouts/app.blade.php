@@ -60,7 +60,7 @@
         @yield('content')
     
 
-
+<p>HELEEOEOEOEOE</p>
 
     </body>
 </html>
