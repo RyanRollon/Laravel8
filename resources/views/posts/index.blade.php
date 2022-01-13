@@ -9,8 +9,6 @@
   padding-right:50px;
   padding-bottom:50px;
 }
-
-
 </style>
 @endsection
 
