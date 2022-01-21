@@ -39,7 +39,7 @@ Route::get('/login', [LoginController::class, 'index'])
 Route::post('/login', [LoginController::class, 'store']);
 
 
-Route::post('/posts/{id}/likes', [PostLikeController::class, 'store'])
+Route::post('/posts/{post}/likes', [PostLikeController::class, 'store'])
 ->name('posts.likes');
 
 
