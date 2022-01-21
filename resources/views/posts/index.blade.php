@@ -9,6 +9,16 @@
   padding-right:50px;
   padding-bottom:50px;
 }
+
+.container .fix
+{
+  padding-left:50px;
+}
+
+.container .panel .Favor .button{
+  border: none;
+}
+
 </style>
 @endsection
 
@@ -36,28 +46,43 @@
                         <span style="color:grey"> {{ $post->created_at->diffForHumans() }}</span>
                         
                         <p style="color:white">
-                          <tr>
-                           <td>{{ $post->body }}</td>
-                          </tr>
+                          {{ $post->body }}
                          </p>
-                      </div>
+
+                           <div class="Favor">
+                             <div class="d-flex justify-content-start">
+                              <form action=" {{ route('posts.likes', $post->id) }}" method="post">
+                              @csrf
+                                <button type="submit" class="btn btn-link">Like</button>
+                              </form>
+
+                              <form action="" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-link">Unlike</button> 
+                              </form>
+
+                              <span style="color:grey"> {{ $post->likes->count() }} {{ Str::plural('like', $post->likes->count()) }} </span>
+                             </div>
+
+                            
+                           </div>
+                        </div>
+                      
                      @endforeach
                      
                  @else
                     
                     <h6 style="color:white"> There is no posts</h6>
                  @endif  
-                 
-                 {{ $posts->links() }}
+                
+                
                 </div>
-              
-               
+                <div class="fix" style="margin-right: 50px">
+                  {{ $posts->links() }}
+                </div>
                 
            </div>
          </div>
          
 </div>
-
-
-
 @endsection

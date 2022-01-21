@@ -5,6 +5,8 @@ use  App\Http\Controllers\Auth\LogoutController;                    //Logout
 use  App\Http\Controllers\Auth\LoginController;                   //Login Controller
 use  App\Http\Controllers\Auth\RegisterController;         //Register Controller
 use  App\Http\Controllers\DashboardController;              //Dashboard Controller
+use  App\Http\Controllers\PostLikeController; 
+
 use  App\Http\Controllers\PostController; 
 
 
@@ -35,6 +37,13 @@ Route::get('/login', [LoginController::class, 'index'])
 // ->middleware('guest') in order to not direct to the login form if the user is still login
 
 Route::post('/login', [LoginController::class, 'store']);
+
+
+Route::post('/posts/{id}/likes', [PostLikeController::class, 'store'])
+->name('posts.likes');
+
+
+
 
 Route::get('/posts', [PostController::class, 'index'])
 ->name('posts.index');
